@@ -1,0 +1,10 @@
+    function updateColor() {
+    var now = new Date().getHours()
+    if (now > 9) {
+        $("#9am").addClass("past")
+    }   else if (now >= 9 && now < 10) {
+        $("#9am").addClass("present")
+    }   else {
+        $("#9am").addClass("future")
+    }            
+}
