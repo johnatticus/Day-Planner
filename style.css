@@ -4,6 +4,10 @@ body {
   line-height: 1;
 }
 
+h1 {
+  font-family: 'Archivo Black', sans-serif;
+}
+
 textarea {
   background: transparent;
   border: none;
