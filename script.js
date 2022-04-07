@@ -11,6 +11,7 @@ setInterval(update, 1000)
 // start a jquery function
 $(document).ready(function() {
 
+    // function to make info save to local storage when the save button is pressed
     $(".saveBtn").on("click", function() {
     var value = $(this).siblings(".information").val()
     var time = $(this).parent().attr("id")
@@ -18,19 +19,17 @@ $(document).ready(function() {
     console.log(value)
     })
 
-    function colorUpdate() {
-        var currentHour = moment().hours()
-        
-    }
-
+    //set a constant that encompasses all rows in the html for all the business hours
     const rows = document.getElementsByClassName("row");
-    let currentHour = parseInt(moment().format('H'));
+    
+    // sets currentHour to the local time hour with moment js api
+    let currentHour = moment().hours();
     console.log(currentHour)
     
     Array.from(rows).forEach(row => {
       let rowIdString = row.id //, rowHour;
         console.log(row.id)
-        console.log(currentHour)
+        console.log(rowIdString)
       if (rowIdString) {
         rowHour = parseInt(rowIdString);
         console.log(rowHour)
@@ -47,21 +46,7 @@ $(document).ready(function() {
     });
     
 
-
-
-    // function colorUpdate()
-    // var currentHour = moment().hours();
-    // $(".time-block").each(function() {
-    //     // create sometime to loop over time blocks
-    // // var blockTime = 
-    // for (let index = 0; index < array.length; index++) {
-    //     const element = array[index];
-        
-    // }
-    // })
-
-
-    // // need saved data from local storage
+    // pulls any local storage to populare the planner when it is refreshed or re-opened
     $("#9 .information").val(localStorage.getItem("9"))
     $("#10 .information").val(localStorage.getItem("10"))
     $("#11 .information").val(localStorage.getItem("11"))

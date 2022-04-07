@@ -71,3 +71,24 @@ Array.from(rows).forEach(row => {
             $(".information").addClass("past")
         } 
       }
+
+
+
+          function colorUpdate() {
+        var currentHour = moment().hours()
+        
+    }
+
+
+
+
+    // function colorUpdate()
+    // var currentHour = moment().hours();
+    // $(".time-block").each(function() {
+    //     // create sometime to loop over time blocks
+    // // var blockTime = 
+    // for (let index = 0; index < array.length; index++) {
+    //     const element = array[index];
+        
+    // }
+    // })
