@@ -28,21 +28,19 @@ $(document).ready(function() {
     console.log(currentHour)
     
     Array.from(rows).forEach(row => {
-      let
-        rowIdString = row.id,
-        rowHour;
-        console.log(rowIdString)
+      let rowIdString = row.id //, rowHour;
+        console.log(row.id)
+        console.log(currentHour)
       if (rowIdString) {
         rowHour = parseInt(rowIdString);
         console.log(rowHour)
       }
       if (rowHour) {
-        // Compares row id to current hour and sets color accordingly
         if (currentHour === rowHour) {
             $(".information").addClass("present")
-        } else if ((currentHour < rowHour) && (currentHour > rowHour - 6)) {
+        } else if (currentHour < rowHour) {
             $(".information").addClass("future")
-        } else if ((currentHour > rowHour) && (currentHour < rowHour + 6)) {
+        } else if (currentHour > rowHour) {
             $(".information").addClass("past")
         } 
       }
