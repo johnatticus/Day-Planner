@@ -11,28 +11,68 @@ setInterval(update, 1000)
 // start a jquery function
 $(document).ready(function() {
 
-    $("saveBtn").on("click", function() {
+    $(".saveBtn").on("click", function() {
     var value = $(this).siblings(".information").val()
     var time = $(this).parent().attr("id")
     localStorage.setItem(time, value)
+    console.log(value)
     })
 
-    function colorUpdate()
+    function colorUpdate() {
+        var currentHour = moment().hours()
+        
+    }
+
+    const rows = document.getElementsByClassName("row");
+    let currentHour = parseInt(moment().format('H'));
+    console.log(currentHour)
+    
+    Array.from(rows).forEach(row => {
+      let
+        rowIdString = row.id,
+        rowHour;
+        console.log(rowIdString)
+      if (rowIdString) {
+        rowHour = parseInt(rowIdString);
+        console.log(rowHour)
+      }
+      if (rowHour) {
+        // Compares row id to current hour and sets color accordingly
+        if (currentHour === rowHour) {
+            $(".information").addClass("present")
+        } else if ((currentHour < rowHour) && (currentHour > rowHour - 6)) {
+            $(".information").addClass("future")
+        } else if ((currentHour > rowHour) && (currentHour < rowHour + 6)) {
+            $(".information").addClass("past")
+        } 
+      }
+    });
+    
+
+
+
+    // function colorUpdate()
     // var currentHour = moment().hours();
     // $(".time-block").each(function() {
     //     // create sometime to loop over time blocks
-    // var blockTime =
-    // )}
+    // // var blockTime = 
+    // for (let index = 0; index < array.length; index++) {
+    //     const element = array[index];
+        
+    // }
+    // })
 
+
+    // // need saved data from local storage
+    $("#9 .information").val(localStorage.getItem("9"))
+    $("#10 .information").val(localStorage.getItem("10"))
+    $("#11 .information").val(localStorage.getItem("11"))
+    $("#12 .information").val(localStorage.getItem("12"))
+    $("#13 .information").val(localStorage.getItem("13"))
+    $("#14 .information").val(localStorage.getItem("14"))
+    $("#15 .information").val(localStorage.getItem("15"))
+    $("#16 .information").val(localStorage.getItem("16"))
+    $("#17 .information").val(localStorage.getItem("17"))
     
-    // need saved data from local storage
-    $("#9am .information").val(localStorage.getItem("9am"))
-    $("#10am .information").val(localStorage.getItem("10am"))
-    $("#11am .information").val(localStorage.getItem("11am"))
-    $("#12pm .information").val(localStorage.getItem("12pm"))
-    $("#12pm .information").val(localStorage.getItem("1pm"))
-    $("#12pm .information").val(localStorage.getItem("2pm"))
-    $("#12pm .information").val(localStorage.getItem("3pm"))
-    $("#12pm .information").val(localStorage.getItem("4pm"))
-    $("#12pm .information").val(localStorage.getItem("5pm"))
 });
+
