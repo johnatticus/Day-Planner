@@ -31,7 +31,7 @@ $(document).ready(function() {
 let currentHour = moment().hours();
 
 // function to run through the hours by ID, which is 9-17 in 24 hour time
-// based on the starting time of 9
+// based on the starting time of 9 
 // adds a class based on the current cycled hour row against the real current time var set above this function    
 function colorTheHours() {
     for (let i = 9; i < 18; i++) {
